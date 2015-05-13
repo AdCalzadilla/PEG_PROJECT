@@ -1,1 +1,9 @@
-prueba2
+func(){
+a = 3
+b = a
+return b
+}
+main(){
+a = 3-2
+return a
+}

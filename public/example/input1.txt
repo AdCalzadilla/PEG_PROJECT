@@ -1,1 +1,4 @@
-prueba1
+main(){
+a=3+2
+return a
+}
