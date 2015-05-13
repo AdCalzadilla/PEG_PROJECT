@@ -4,10 +4,21 @@ body {
   body h1 {
     font-family: "Arial", "Helvetica", "Verdana";
     font-size: 250%;
-    color: #00003d;
+    color: #00003D;
     margin-left: 28%; }
+  body #TIT {
+    border-style: solid; }
   body p {
     color: #191950; }
+  body a {
+    border: white 4px outset;
+    margin: 25px; }
+  body #files {
+    border: white 4px outset;
+    margin: 25px; }
+  body button {
+    border: white 4px outset;
+    margin: 25px; }
 
 #texBoxes textarea {
   margin-top: 5%;
@@ -16,4 +27,6 @@ body {
   margin-right: 5%;
   font-family: "Arial", "Helvetica", "Verdana";
   font-size: 100%;
-  color: #00003d; }
+  color: #00003D; }
+
+/*# sourceMappingURL=main.css.map */

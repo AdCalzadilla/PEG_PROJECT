@@ -29,9 +29,34 @@ body {
     //background: $background-h1;
   }
 
+  #TIT{
+
+    border-style: solid;
+  }
+
   p{
     color: $primaryColor;
   }
+ 
+  a{
+
+     border: white 4px outset;
+     margin: 25px;
+  }
+
+  #files{
+
+     border: white 4px outset;
+     margin: 25px;
+  }
+
+  button{
+
+     border: white 4px outset;
+     margin: 25px;
+  }
+
+
 }
 
 #texBoxes{
