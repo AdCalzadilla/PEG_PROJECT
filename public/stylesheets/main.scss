@@ -1,0 +1,49 @@
+//Variables
+$primaryColor: #191950;
+$color-azulFuerte: #00003D;
+$font-normal: 'Arial', 'Helvetica', 'Verdana';
+$font-size-normal: 100%;
+
+$font-h1: 'Arial', 'Helvetica', 'Verdana';
+$font-size-h1: 250%;
+$margin-left-h1: 28%;
+$background-h1: #000000;
+
+$font-textBox: 'Arial', 'Helvetica', 'Verdana';
+$font-size-textBox: 100%;
+$marginTextBox-left: 5%;
+$marginTextBox-right: 5%;
+$marginTextBox-top: 5%;
+$marginTextBox-bottom: 5%;
+
+body {
+  //$primaryColor: #ccc !global;
+  background: $primaryColor;
+  background-image: url("../images/fondoazulceleste.jpg");
+
+  h1{
+    font-family: $font-h1;
+    font-size: $font-size-h1;
+    color: $color-azulFuerte;
+    margin-left: $margin-left-h1;
+    //background: $background-h1;
+  }
+
+  p{
+    color: $primaryColor;
+  }
+}
+
+#texBoxes{
+
+  textarea{
+    margin-top: $marginTextBox-top;
+    margin-bottom: $marginTextBox-bottom;
+    margin-left: $marginTextBox-left;
+    margin-right: $marginTextBox-right;
+
+    font-family: $font-textBox;
+    font-size: $font-size-textBox;
+    color: $color-azulFuerte;
+  }
+}

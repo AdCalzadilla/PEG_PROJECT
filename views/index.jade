@@ -5,16 +5,30 @@ block content
   meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
   title PEG_PROJECT
   body
+
     h1= title
     p Welcome to #{title}
-    textarea#codigo(
-      rows= '15'
-      cols= '50'
-    )
+    div#texBoxes
+      textarea#codigo(
+        rows= '15'
+        cols= '50'
+      )
 
-    button#PARSE(value='parse') Do it
-    textarea#OUTPUT(
-      readonly
-      rows= '15'
-      cols= '50'
-    )
+      textarea#OUTPUT(
+        readonly
+        rows= '15'
+        cols= '50'
+      )
+    div#btns
+      button#PARSE(value='parse') Do it
+
+
+    div(style='display:inline')
+    button#input1(type='button', onclick="dump('example/input1.txt');") Example 1
+      |           
+      button#input2(type='button', onclick="dump('example/input2.txt');") Example 2
+      |           
+      button#input3(type='button', onclick="dump('example/input3.txt');") Example 3
+
+    p
+      input#files(type='file')

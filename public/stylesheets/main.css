@@ -1,0 +1,19 @@
+body {
+  background: #191950;
+  background-image: url("../images/fondoazulceleste.jpg"); }
+  body h1 {
+    font-family: "Arial", "Helvetica", "Verdana";
+    font-size: 250%;
+    color: #00003d;
+    margin-left: 28%; }
+  body p {
+    color: #191950; }
+
+#texBoxes textarea {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-family: "Arial", "Helvetica", "Verdana";
+  font-size: 100%;
+  color: #00003d; }
