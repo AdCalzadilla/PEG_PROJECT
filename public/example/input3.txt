@@ -1,1 +1,7 @@
-prueba3
+main(){
+	
+	a=2*3
+	b=a
+
+	return b
+}
