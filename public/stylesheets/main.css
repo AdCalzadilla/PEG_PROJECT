@@ -7,7 +7,9 @@ body {
     color: #00003D;
     margin-left: 28%; }
   body #TIT {
-    border-style: solid; }
+    background: #191950;
+    border-style: solid;
+    width: 100%; }
   body p {
     color: #191950; }
   body a {

@@ -16,6 +16,8 @@ $marginTextBox-right: 5%;
 $marginTextBox-top: 5%;
 $marginTextBox-bottom: 5%;
 
+$tamWidth: 100%;
+
 body {
   //$primaryColor: #ccc !global;
   background: $primaryColor;
@@ -30,14 +32,15 @@ body {
   }
 
   #TIT{
-
+    background: $primaryColor;
     border-style: solid;
+    width: $tamWidth;
   }
 
   p{
     color: $primaryColor;
   }
- 
+
   a{
 
      border: white 4px outset;

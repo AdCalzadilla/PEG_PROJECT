@@ -5,16 +5,14 @@ block content
   meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
   title PEG_PROJECT
   body
-
     div#TIT
      h1= title
     p Welcome to #{title}
 
     div(style='display:inline')
-     a.btn(href='https://github.com/alu0100288216/PL_analizadorLexico') Repo at GitHub
+     a.btn(href='https://github.com/alu0100288216/PEG_PROJECT') Repo at GitHub
      a.btn(href='') Tests
      a.btn(href='') Travis
-
     div#texBoxes
       textarea#codigo(
         rows= '15'
@@ -26,16 +24,33 @@ block content
         rows= '15'
         cols= '50'
       )
+    script(type='text/javascript').
+          function dump(fileName) {
+          $.get(fileName, function (data) {
+          $("#codigo").val(data);
+          });
+          };
+    div()
+      button#input2(type='button', onclick="dump('/example/input1.txt');") Example 1
+      button#input(type='button', onclick="dump('/example/input2.txt');") Example 2
+      button#input(type='button', onclick="dump('/example/input3.txt');") Example 3
+      button#hello(type='button', onclick="dump('/example/err.txt');") Example err
     div#btns
       button#PARSE(value='parse') Do it
 
-
-    div(style='display:inline')
-    button#input1(type='button', onclick="dump('example/input1.txt');") Example 1
-      |           
-      button#input2(type='button', onclick="dump('example/input2.txt');") Example 2
-      |           
-      button#input3(type='button', onclick="dump('example/input3.txt');") Example 3
+      script(type='text/javascript').
+        document.getElementById('PARSE').addEventListener('change', CopyMe, false);
+        function CopyMe(evt) {
+        var file = evt.target.PARSE[0];
+        if (file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+        OUTPUT.innerHTML = e.target.result;
+        }
+        var c = reader.readAsText(file);
+        }
+        else { alert("Failed to load file"); }
+        }
 
     p
       input#files(type='file')
@@ -44,7 +59,7 @@ block content
 
     p Autores:
 
-    div(style='display:inline')        
+    div(style='display:inline')
      a.btn(href='http://alu0100288216.github.io') Adrián Calzadilla González
      a.btn(href='http://alu0100775846.github.io') José Manuel Hernández Hernández
      a.btn(href='http://alu0100769609.github.io') Adexe Sabina Pérez
