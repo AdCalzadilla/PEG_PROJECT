@@ -22,11 +22,9 @@ Entre las funcionalidades no implementadas, se encuentran la llamada de funcione
 Una **función "main"**, precedida opcionalmente por una o más **funciones**, cada una separada por *al menos* un retorno de carro.
 
 #### Función
-Sección | Descripción
--|-
-Nombre | Un *identificador* (caracteres alfabéticos).
-Argumentos | Serán *identificadores* (cada uno un argumento) separados por comas, y colocados entre paréntesis.
-Cuerpo | Una **sentencia de retorno**, precedida opcionalmente por una o más **sentencias de asignación**.
+* **Nombre:** Un *identificador* (caracteres alfabéticos).
+* **Argumentos:** Serán *identificadores* (cada uno un argumento) separados por comas, y colocados entre paréntesis.
+* **Cuerpo:** Una ***sentencia de retorno***, precedida opcionalmente por una o más ***sentencias de asignación***.
 
 Ejemplo:
 ```
@@ -49,10 +47,8 @@ return b
 
 #### Sentencia
 
-Tipo | Descripción
--|-
-Sentencia de asignación | Será una igualación de un identificador (variable) con una **expresión**.
-Sentencia de retorno | Se tratará de la palabra "return" seguida de una **expresión** que será devuelta.
+* **Sentencia de asignación:** Será una igualación de un identificador (variable) con una ***expresión***.
+* **Sentencia de retorno:** Se tratará de la palabra "return" seguida de una ***expresión*** que será devuelta.
 
 
 #### Expresión
