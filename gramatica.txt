@@ -1,0 +1,106 @@
+start
+ = calculation
+
+calculation
+ = p:program {
+return eval(p);
+}
+
+program
+ = __? f:functions __? { return f; }
+
+functions
+ = functionMain
+ / n:functionNormal ___ o:functions { return o; }
+
+functionNormal
+ = i:id _? f:funcNotId { return [i,f]; }
+
+functionMain
+ = i:"main" _? f:funcNotId { return f; }
+
+funcNotId
+ = a:funcArgs __? b:funcBody {
+function flatten(arr) {
+  return arr.reduce(function (flat, toFlatten) {
+	return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+  }, []);
+}
+
+b = flatten(b);
+h = {};
+for (i = 0; i < b.length; i+=2){
+ h[b[i]] = b[i+1];
+}
+
+salida = h["return"];
+
+tokens_salida = salida.match(/[0-9]+|[a-zA-Z]+|[-+*/]/g);
+
+function substituir(ary){
+ for (i = 0; i < ary.length; i++){
+  toks = ary[i].match(/[0-9]+|[a-zA-Z]+|[-+*/]/g);
+  for (j = 0; j < toks.length; j++){
+   if (h[toks[j]] != null) {
+	toks[j] = h[toks[j]];
+   }
+  }
+  ary[i] = toks.join("");
+ }
+return ary
+}
+
+for(l = 0; l < b.length / 2 - 1; l++){
+ tokens_salida = substituir(tokens_salida);
+}
+
+return tokens_salida.join("");
+}
+
+funcArgs
+ = "(" _? a:args { return a; }
+ / "(" _? ")" { return []; }
+
+args
+ = i:id _? ")" { return i; }
+ / i:id _? "," _? o:args { return [i,o]; }
+
+funcBody
+ = "{" __? s:statements __? "}" { return s; }
+
+statements
+ = r:statementReturn { return r; }
+ / a:statementAssign ___ s:statements { return [a,s];}
+
+statementAssign
+ = _? i:id _? "=" _? e:expression _? { return [i,e]; }
+
+statementReturn
+ = _? r:"return" _ e:expression _? { return [r,e]; }
+
+_
+ = [ \t]+ { return " "; }
+
+__
+ = [ \t\n]+ { return " "; }
+
+___
+ = "\n"+ { return " "; }
+
+expression
+ = a:atom _? o:[-+*/] _? e:expression { return a+o+e; }
+ / "(" e:expression ")" { return e; }
+ / atom
+
+atom
+ = id
+ / num
+
+id
+ = letters:[A-z]+ { return letters.join(""); }
+
+num
+ = digits:[0-9]+ { return digits.join(""); }
+
+
+
