@@ -27,18 +27,26 @@ body {
     font-family: $font-h1;
     font-size: $font-size-h1;
     color: $color-azulFuerte;
-    margin-left: $margin-left-h1;
+  //  margin-left: $margin-left-h1;
     //background: $background-h1;
   }
 
+  h2{
+    text-align:center;
+  }
+
+  div{
+    text-align:center;
+  }
+
   #TIT{
-    background: $primaryColor;
     border-style: solid;
-    width: $tamWidth;
+    border-color:#4B5087;
   }
 
   p{
     color: $primaryColor;
+    text-align:center;
   }
 
   a{

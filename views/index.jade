@@ -3,16 +3,26 @@ extends layout
 block content
   head
   meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
-  title PEG_PROJECT
+  title Micro-Ruby
   body
     div#TIT
-     h1= title
-    p Welcome to #{title}
+     h1= "Micro-Ruby"
+    
+    h2= "Welcome to Micro-Ruby"
 
-    div(style='display:inline')
+    div
      a.btn(href='https://github.com/alu0100288216/PEG_PROJECT') Repo at GitHub
      a.btn(href='') Tests
      a.btn(href='') Travis
+    
+    div
+     br
+     p "Micro-Ruby" es un lenguaje definido mediante una gramática PEG e implementado usando "JavaScript"
+     h3= "Características del lenguaje"
+     p * Sólo permite expresiones matemáticas simples, y la asignación de éstas a variables.
+     p * A diferencia de Ruby, estas operaciones se deben realizar siempre dentro de funciones.
+     p * Las operaciones matemáticas permitidas son la suma, resta, multiplicación y división.
+     
     div#texBoxes
       textarea#codigo(
         rows= '15'
@@ -36,7 +46,7 @@ block content
       button#input(type='button', onclick="dump('/example/input3.txt');") Example 3
       button#hello(type='button', onclick="dump('/example/err.txt');") Example err
     div#btns
-      button#PARSE(value='parse') Do it
+      button#PARSE(value='parse') Parsear
 
       script(type='text/javascript').
         document.getElementById('PARSE').addEventListener('change', CopyMe, false);
