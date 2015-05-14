@@ -59,7 +59,7 @@ Las expresiones consisten en un literal numérico, una variable, o una concatena
 * [Adrián Calzadilla González](https://alu0100288216.github.io)
 * [José Manuel Hernández Hernández](https://alu0100775846.github.io)
 * [Kevin Martín Chinea](https://alu0100774665.github.io)
-* [Adexe Sabina Pérez](https://alu769609.github.io)
+* [Adexe Sabina Pérez](https://alu0100769609.github.io)
 
 ### Página de despliegue
 

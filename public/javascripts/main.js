@@ -49,7 +49,6 @@
         peg$startRuleFunction  = peg$parsestart,
 
         peg$c0 = function(p) {
-        return p;
         return eval(p);
         },
         peg$c1 = peg$FAILED,
