@@ -49,6 +49,7 @@
         peg$startRuleFunction  = peg$parsestart,
 
         peg$c0 = function(p) {
+        return p;
         return eval(p);
         },
         peg$c1 = peg$FAILED,
@@ -119,11 +120,11 @@
         peg$c31 = { type: "literal", value: "return", description: "\"return\"" },
         peg$c32 = function(r, e) { return [r,e]; },
         peg$c33 = [],
-        peg$c34 = " ",
-        peg$c35 = { type: "literal", value: " ", description: "\" \"" },
+        peg$c34 = /^[ \t]/,
+        peg$c35 = { type: "class", value: "[ \\t]", description: "[ \\t]" },
         peg$c36 = function() { return " "; },
-        peg$c37 = /^[ \n]/,
-        peg$c38 = { type: "class", value: "[ \\n]", description: "[ \\n]" },
+        peg$c37 = /^[ \t\n]/,
+        peg$c38 = { type: "class", value: "[ \\t\\n]", description: "[ \\t\\n]" },
         peg$c39 = "\n",
         peg$c40 = { type: "literal", value: "\n", description: "\"\\n\"" },
         peg$c41 = /^[\-+*\/]/,
@@ -883,8 +884,8 @@
 
       s0 = peg$currPos;
       s1 = [];
-      if (input.charCodeAt(peg$currPos) === 32) {
-        s2 = peg$c34;
+      if (peg$c34.test(input.charAt(peg$currPos))) {
+        s2 = input.charAt(peg$currPos);
         peg$currPos++;
       } else {
         s2 = peg$FAILED;
@@ -893,8 +894,8 @@
       if (s2 !== peg$FAILED) {
         while (s2 !== peg$FAILED) {
           s1.push(s2);
-          if (input.charCodeAt(peg$currPos) === 32) {
-            s2 = peg$c34;
+          if (peg$c34.test(input.charAt(peg$currPos))) {
+            s2 = input.charAt(peg$currPos);
             peg$currPos++;
           } else {
             s2 = peg$FAILED;
@@ -1168,7 +1169,8 @@
       throw peg$buildException(null, peg$maxFailExpected, peg$maxFailPos);
     }
   }
-  
+
+
   return {
     SyntaxError: SyntaxError,
     parse:       parse
