@@ -1,9 +1,6 @@
-func(){
-a = 3
-b = a
-return b
-}
 main(){
-a = 3-2
-return a
+a = 4*4
+b = 2*a - 2
+c = 3-b
+return c
 }

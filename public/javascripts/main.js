@@ -49,6 +49,7 @@
         peg$startRuleFunction  = peg$parsestart,
 
         peg$c0 = function(p) {
+        return p;
         return eval(p);
         },
         peg$c1 = peg$FAILED,
@@ -72,16 +73,16 @@
          h[b[i]] = b[i+1];
         }
 
-        salida = h["return"];
+        output = h["return"];
 
-        tokens_salida = salida.match(/[0-9]+|[a-zA-Z]+|[-+*/]/g);
+        output_tokens = output.match(/[0-9]+|[a-zA-Z]+|[-+*/]/g);
 
-        function substituir(ary){
+        function substitute(ary){
          for (i = 0; i < ary.length; i++){
-          toks = ary[i].match(/[0-9]+|[a-zA-Z]+|[-+*/]/g);
+          toks = ary[i].match(/[0-9]+|[a-zA-Z]+|[-+*/()]/g);
           for (j = 0; j < toks.length; j++){
            if (h[toks[j]] != null) {
-        	toks[j] = h[toks[j]];
+        	toks[j] = "("+h[toks[j]]+")";
            }
           }
           ary[i] = toks.join("");
@@ -90,10 +91,10 @@
         }
 
         for(l = 0; l < b.length / 2 - 1; l++){
-         tokens_salida = substituir(tokens_salida);
+         output_tokens = substitute(output_tokens);
         }
 
-        return tokens_salida.join("");
+        return output_tokens.join("");
         },
         peg$c10 = "(",
         peg$c11 = { type: "literal", value: "(", description: "\"(\"" },
@@ -129,7 +130,7 @@
         peg$c41 = /^[\-+*\/]/,
         peg$c42 = { type: "class", value: "[\\-+*\\/]", description: "[\\-+*\\/]" },
         peg$c43 = function(a, o, e) { return a+o+e; },
-        peg$c44 = function(e) { return e; },
+        peg$c44 = function(e) { return ["(",e,")"]; },
         peg$c45 = /^[A-z]/,
         peg$c46 = { type: "class", value: "[A-z]", description: "[A-z]" },
         peg$c47 = function(letters) { return letters.join(""); },
